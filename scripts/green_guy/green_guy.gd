@@ -3,15 +3,16 @@ extends Node2D
 export var speed = 100
 var motion = Vector2(0,0)
 
-onready var animationPlayer = $Body/Animation/AnimationPlayer
-onready var sprite = $Body/Animation/Sprite
+onready var animationPlayer = $AnimationPlayer
+onready var sprite = $Body/Sprite
+var animation = load("res://scripts/green_guy/animation.gd").new()
 
 func run():
 	if Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
 		motion.x = speed
-		sprite.flip_h = false
+		animation.turnRight(sprite)
 	elif Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-		sprite.flip_h = true
+		animation.turnLeft(sprite)
 		motion.x = -speed
 	else:
 		motion.x = 0
