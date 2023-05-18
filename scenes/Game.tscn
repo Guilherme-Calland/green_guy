@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/green_guy.tscn" type="PackedScene" id=2]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GreenGuy" parent="." instance=ExtResource( 2 )]
+position = Vector2( -184, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -112 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
