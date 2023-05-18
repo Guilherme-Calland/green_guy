@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 func turnLeft(var sprite):
 	sprite.flip_h = true
